@@ -6,9 +6,13 @@ chrome.commands.onCommand.addListener(function(command) {
   if(command == "asfd") {
     chrome.tabs.query({"active" : true, "currentWindow": true}, function(tabs) {
       tabs.forEach(function(tab) {
-        if(tabIds.indexOf(tab.id) == -1) {
+        var index = tabIds.indexOf(tab.id);
+        if(index == -1) {
           tabUrls.push(tab.url);
           tabIds.push(tab.id);
+        } else {
+          tabUrls.splice(index,1);
+          tabIds.splice(index,1);
         }
       });
       console.log(tabIds.length);
