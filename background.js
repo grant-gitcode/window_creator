@@ -22,7 +22,7 @@ chrome.commands.onCommand.addListener(function(command) {
     });
   }
 
-  if(command == "ffaf") {
+  if(command == "ffaf" && tabUrls.length > 0) {
     chrome.tabs.remove(tabIds, function() {
       console.log(tabIds);
       chrome.windows.create({"url":tabUrls,"focused":true},function() {
