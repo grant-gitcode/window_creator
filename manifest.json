@@ -1,19 +1,28 @@
 {
-  "manifest_version": 2,
-
   "name": "Window Creator",
-  "description": "This extension allows the user to open up a new window made up of
-  currently open tabs, moving them to a new window and simplifying the browsing
-  environment. This is useful for when browser sessions get out of hand and need an
-  easy way to sort tabs into windows.",
+  "description": "This extension creates a new window from preexisting windows",
   "version": "1.0",
-
-  "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
   },
-  "permissions": [
-    "activeTab",
-    "storage"
-  ]
+  "browser_action": {
+    "default_popup": "browser_action.html"
+  },
+  "commands": {
+    "asfd": {
+      "suggested_key": {"default": "Ctrl+Shift+Z"},
+      "description": "blah"
+    },
+    "ffaf": {
+      "suggested_key": {"default": "Alt+Shift+C"},
+      "description": "bleh"
+    },
+    "_execute_browser_action": {
+      "suggested_key": {"default": "Alt+Shift+O"},
+      "description": "blih"
+    }
+  },
+   "permissions": ["tabs","storage"]
 }
