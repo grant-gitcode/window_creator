@@ -37,7 +37,7 @@ chrome.commands.onCommand.addListener(function(command) {
   if(command == "ffaf" && tabUrls.length > 0) {
     chrome.tabs.remove(tabIds, function() {
       console.log(tabIds);
-      chrome.windows.create({"url":tabUrls,"focused":true},function() {
+      chrome.windows.create({"url":tabUrls,"focused":true,"state":"maximized"},function() {
         tabUrls.length = 0; tabIds.length = 0;
         chrome.browserAction.setBadgeText({"text":tabUrls.length.toString()});
       });
