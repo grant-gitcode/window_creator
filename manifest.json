@@ -12,11 +12,11 @@
   },
   "commands": {
     "asfd": {
-      "suggested_key": {"default": "Ctrl+Shift+Z"},
+      "suggested_key": {"default": "Ctrl+Shift+Y"},
       "description": "blah"
     },
     "ffaf": {
-      "suggested_key": {"default": "Alt+Shift+C"},
+      "suggested_key": {"default": "Alt+Shift+V"},
       "description": "bleh"
     },
     "_execute_browser_action": {
